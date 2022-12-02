@@ -30,7 +30,7 @@ def update(request, task_id):
         edited_task = models.Task(task_name=form.cleaned_data['task_name'], created_at=models.Task.objects.get(id=task_id).created_at, modified_at=datetime.datetime.now(), id=task_id)
         edited_task.save()
         return redirect('index')
-    return render(request, 'TodoList/update.html', {'form': form})
+    return render(request, 'TodoList/update.html', {'form': form, 'task_id': task_id})
 
 
 def delete(request, task_id):
