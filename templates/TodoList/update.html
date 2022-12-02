@@ -1,0 +1,17 @@
+{% extends "TodoList/base.html" %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">Update Task</div>
+        <div class="card-body">
+            <form action="/" method="post">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <button class="btn btn-primary mt-4 mb-2" type="submit"><i class="fa-solid fa-save pe-1"></i>Save</button>
+            </form>
+        </div>
+    </div>
+    <a class="btn btn-lg btn-warning mt-3" href="{% url 'index' %}">
+        <i class="fa-solid fa-arrow-left pe-1"></i>Go Back
+    </a>
+{% endblock %}
